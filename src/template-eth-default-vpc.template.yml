@@ -3,7 +3,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 
 Metadata:
-  RepoUrl: https://github.com/mludvig/aws-ethereum-miner
+  RepoUrl: https://github.com/NagleZhang/aws-cloudformation
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
@@ -25,7 +25,7 @@ Parameters:
       or a list of specific instances e.g. "p3.2xlarge,p3.8xlarge", or an exclusion e.g. "-g5g.*".
       The most cost effective combination of available instances will be used first.
     Type: String
-    Default: "*"
+    Default: "g4dn.xlarge"
 
   Hashrate:
     Description: |
@@ -38,7 +38,7 @@ Parameters:
   EthWallet:
     Type: String
     Description: Ethereum Wallet Address
-    Default: "0x99b36B44cf319c9E0ed4619ee2050B21ECac2c15"
+    Default: "0x75cC959ACc10a38267b6dd31E9a6eBF395FFb7eA"
 
   PricingPlan:
     Type: String
@@ -57,7 +57,7 @@ Mappings:
     spot:
       OnDemandPct: "0"
     both:
-      OnDemandPct: "50"
+      OnDemandPct: "30"
     ondemand:
       OnDemandPct: "100"
 
